@@ -7,7 +7,6 @@ import Message from "./Components/Message/Message";
 import AddAdmin from "./Components/AddAdmin/AddAdmin";
 import AddUser from "./Components/AddUser/AddUser";
 import AddAdv from "./Components/AddAdv/AddAdv";
-import ProdectedRoute from "./Components/ProdectedRoute/ProdectedRoute";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
 import FieldAdv from "./Components/FieldAdv/FieldAdv";
 import AddMessage from "./Components/AddMessage/AddMessage";
@@ -32,17 +31,17 @@ function App() {
   const router = createHashRouter([
     {
       path: "/", element: <Layout />, children: [
-        { index: true, element: (<ProdectedRoute><Home /></ProdectedRoute>) },
-        { path: "/addAdmin", element: (<ProdectedRoute setData={DtataToken} userData={userData}><AddAdmin /></ProdectedRoute>), },
-        { path: "/addUser", element: (<ProdectedRoute><AddUser /></ProdectedRoute>) },
-        { path: "/addAdv", element: (<ProdectedRoute><AddAdv /></ProdectedRoute>) },
-        { path: "/message", element: (<ProdectedRoute><Message /></ProdectedRoute>) },
-        { path: "/addMessage", element: (<ProdectedRoute><AddMessage /></ProdectedRoute>) },
-        { path: "/analyze", element: (<ProdectedRoute><Analyze /></ProdectedRoute>) },
-        { path: "/productDetails/:name/:id", element: (<ProdectedRoute><ProductDetails /></ProdectedRoute>) },
-        { path: "/fieldAdv/:categoryId", element: (<ProdectedRoute><FieldAdv /></ProdectedRoute>), },
-        { path: "/AddCategory", element: (<ProdectedRoute><AddCategory /></ProdectedRoute>) },
-        { path: '/login', element: <Login /> },
+        { index: true, element: <Login /> },
+        { path: '/home', element: <Home /> },
+        { path: "/addAdmin", element: <AddAdmin />},
+        { path: "/addUser", element: <AddUser /> },
+        { path: "/addAdv", element: <AddAdv /> },
+        { path: "/message", element: <Message /> },
+        { path: "/addMessage", element: <AddMessage /> },
+        { path: "/analyze", element: <Analyze /> },
+        { path: "/productDetails/:name/:id", element: <ProductDetails /> },
+        { path: "/fieldAdv/:categoryId", element: <FieldAdv />, },
+        { path: "/AddCategory", element: <AddCategory /> },
         { path: "*", element: <Notfound /> },
       ]
     },

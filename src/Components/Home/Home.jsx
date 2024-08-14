@@ -76,31 +76,33 @@ export default function Home() {
     }
     return <>
         <section className="container py-4 my-5">
-            <div className="row">
-                <div className="col-sm-12 col-md-12 col-lg-6 d-flex  align-items-center shadow-sm ">
-                    <img src={house} className='w-50' alt="man-and-house" />
-                    <div className="">
-                        <div>
-                            <p>Hello ,</p>
-                            <h5>
-                                {userData?.fullName}
-                            </h5>
+            <div className="row mx-2">
+                <div className="col-sm-11 col-md-11  col-lg-5 mx-1 my-2 shadow-sm bg-primary text-white rounded-5">
+                    <div className='d-flex  align-items-center'>
+                        <img src={house} className='w-50' alt="man-and-house" />
+                        <div className="">
+                            <div>
+                                <p>Hello ,</p>
+                                <h5>
+                                    {userData?.fullName}
+                                </h5>
+                            </div>
+                            <p>
+                                Only Admins Are Allowed To Access These Resources!
+                            </p>
                         </div>
-                        <p>
-                            Only Admins Are Allowed To Access These Resources!
-                        </p>
                     </div>
                 </div>
-                <div className="col-6 col-sm-6 col-md-6 col-lg-3  px-3 rounded-2 text-center    d-flex align-items-center justify-content-center  shadow-sm ">
-                    <div>
-                        <p>Total Unit Pending</p>
-                        <h3>{Products?.length}</h3>
-                    </div>
-                </div>
-                <div className="col-6 col-sm-6 col-md-6 col-lg-3  px-3 rounded-2 text-center    d-flex align-items-center justify-content-center  shadow-sm ">
-                    <div>
-                        <p>Unit Accepted</p>
-                        <h3>{ProductsAccepted ? ProductsAccepted?.length : 0}</h3>
+                <div className="col-sm-11 col-md-11 mx-1 my-2 col-lg-5  shadow-sm bg-primary text-white rounded-5">
+                    <div className="d-flex justify-content-center text-center align-items-center h-100 ">
+                        <div className='me-3'>
+                            <p>Total Unit Pending</p>
+                            <h3>{Products?.length ? Products.length : 0}</h3>
+                        </div>
+                        <div>
+                            <p>Unit Accepted</p>
+                            <h3>{ProductsAccepted ? ProductsAccepted?.length : 0}</h3>
+                        </div>
                     </div>
                 </div>
             </div>

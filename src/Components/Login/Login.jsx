@@ -31,7 +31,7 @@ export default function Login() {
     async function sendData() {
         await axios.post(`https://zunis-node-js.vercel.app/auth/signin`, user).then((response) => {
             localStorage.setItem('user', response.data.token);
-            navigate("/");
+            navigate("/home");
             setIsLoading(false);
         }).catch((error) => {
             setError(error.response.data.Error)

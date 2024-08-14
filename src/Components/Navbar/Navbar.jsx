@@ -18,15 +18,13 @@ export default function Navbar() {
     function logOut() {
         localStorage.removeItem('user')
         setData(null)
-        navigate('login')
+        navigate('/')
     }
     return <>
         <nav className="py-0 my-0  d-flex justify-content-between container-fluid align-items-center">
-                <Link className="navbar-brand" to="/home">
                     <img src={logo} alt="" />
-                </Link>
-                {userData ? <div className='d-flex'>
-                    <Link className="nav-link  fs-5 mx-2" aria-current="page" to="/">
+                {localStorage.getItem('user') ? <div className='d-flex'>
+                    <Link className="nav-link  fs-5 mx-2" aria-current="page" to="/home">
                         <TiHome />
                     </Link>
                     <Link className="nav-link  fs-5 mx-2" aria-current="page" to="/AddUser">
@@ -50,9 +48,9 @@ export default function Navbar() {
                     <Link className="nav-link  fs-5 mx-2" aria-current="page" to="/analyze">
                         <IoMdAnalytics />
                     </Link>
-                    <Link className="nav-link  fs-5 mx-2" aria-current="page" to="/login">
+                    <span className="nav-link  fs-5 mx-2" aria-current="page" >
                         <RiLogoutBoxFill onClick={logOut} />
-                    </Link>
+                    </span>
                 </div> : <>
                     <div className="nav-link  fs-5 mx-2" aria-current="page" >
                         <FaUserAlt />
